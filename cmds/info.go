@@ -3,8 +3,10 @@ package cmds
 import "fmt"
 import "errors"
 
+import "gimpact/utils"
+
 import "github.com/wsxiaoys/terminal/color"
-import "xogeny/gimpact/utils"
+
 
 type InfoCommand struct {
 	Verbose bool `short:"v" login:"verbose" description:"Turn on verbose output"`
