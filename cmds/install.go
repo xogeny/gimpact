@@ -8,7 +8,7 @@ import "strings"
 import "net/http"
 import "io/ioutil"
 
-import "xogeny/gimpact/utils"
+import "gimpact/utils"
 
 import "github.com/wsxiaoys/terminal/color"
 import "github.com/pierrre/archivefile/zip"
@@ -61,11 +61,11 @@ func (x *InstallCommand) Execute(args []string) error {
 	for _, arg := range(args) {
 		libname, ver, err := ParseVersion(arg, index);
 		if (err!=nil) { return err; }
-		
+
 		/* Get Version objects for this library and all its dependencies */
 		deps, err := index.Dependencies(libname, ver);
 		if (err!=nil) { return err; }
-	
+
 		/* Merge them with the master list of libraries we are going to install */
 		err = todo.Merge(deps);
 		if (err!=nil) { return err; }
@@ -79,7 +79,7 @@ func (x *InstallCommand) Execute(args []string) error {
 		ierr := Install(lv, index, ".", x.Verbose);
 		if (ierr!=nil) { color.Println("@{r}Error: "+ierr.Error()) };
 	}
-	
+
 	return nil;
 }
 

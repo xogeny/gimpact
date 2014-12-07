@@ -2,7 +2,8 @@ package cmds
 
 import "fmt"
 
-import "xogeny/gimpact/utils"
+import "gimpact/utils"
+
 import "github.com/wsxiaoys/terminal/color"
 
 /* Define a struct listing all command line options for 'search' */

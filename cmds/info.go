@@ -3,8 +3,10 @@ package cmds
 import "fmt"
 import "errors"
 
+import "gimpact/utils"
+
 import "github.com/wsxiaoys/terminal/color"
-import "xogeny/gimpact/utils"
+
 
 type InfoCommand struct {
 	Verbose bool `short:"v" login:"verbose" description:"Turn on verbose output"`
@@ -32,7 +34,7 @@ func (x *InfoCommand) Execute(args []string) error {
 		if (x.Verbose) {
 			color.Println("    @{!}Version: "+string(vname));
 			color.Println(fmt.Sprintf("      Major Version: %d", v.Major));
-			color.Println(fmt.Sprintf("      Minro Version: %d", v.Minor));
+			color.Println(fmt.Sprintf("      Minor Version: %d", v.Minor));
 			color.Println(fmt.Sprintf("      Patch Version: %d", v.Patch));
 			color.Println("      Canonical Version: "+string(v.Version));
 		} else {
